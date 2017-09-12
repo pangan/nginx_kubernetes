@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    name: nginxservice
+  name: nginxservice
+spec:
+  ports:
+    # The port for this service
+    - protocol: TCP
+      port: 82
+      targetPort: 80
+  # Label keys and values that must match in order to receive traffic for this service
+  selector:
+    app: nginx
+  type: NodePort
